@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cdk-cats
+  namespace: default
+spec:
+  ingressClassName: external
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cdk-cats
+            port:
+              number: 80
+  tls:
+  - hosts:
+      - cdk-cats.example.com
+    secretName: cdk-cats

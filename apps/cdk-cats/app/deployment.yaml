@@ -1,0 +1,37 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  labels:
+    app: cdk-cats
+  name: cdk-cats
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cdk-cats
+  template:
+    metadata:
+      labels:
+        app: cdk-cats
+    spec:
+      containers:
+      - image: calvinhartwell/cdk-cats:latest
+        name: cdk-cats
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 30
+        resources:
+          limits:
+            cpu: 100m
+            memory: 512M
+          requests:
+            cpu: 100m
+            memory: 128M
+      restartPolicy: Always
+
