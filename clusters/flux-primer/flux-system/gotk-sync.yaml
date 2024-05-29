@@ -9,4 +9,4 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: https://github/hyperbolic2346/flux-primer.git
+  url: https://github.com/hyperbolic2346/flux-primer.git
