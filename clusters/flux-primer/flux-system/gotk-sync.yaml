@@ -10,3 +10,16 @@ spec:
   ref:
     branch: main
   url: https://github.com/hyperbolic2346/flux-primer.git
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: flux-primer
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./clusters/flux-primer
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-primer
