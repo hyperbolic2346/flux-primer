@@ -5,7 +5,7 @@ metadata:
   name: ingress-nginx
   namespace: flux-system
 spec:
-  path: ./apps/nginx/app
+  path: ./apps/ingress-nginx/app
   prune: true
   sourceRef:
     kind: GitRepository
