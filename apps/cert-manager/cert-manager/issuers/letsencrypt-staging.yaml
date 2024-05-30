@@ -11,3 +11,5 @@ spec:
       - http01:
           ingress:
             ingressClassName: external
+    privateKeySecretRef:
+      name: letsencrypt-staging
