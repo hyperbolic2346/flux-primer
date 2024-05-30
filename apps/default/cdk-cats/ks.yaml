@@ -5,7 +5,7 @@ metadata:
   name: cdk-cats
   namespace: flux-system
 spec:
-  path: ./apps/cdk-cats/app
+  path: ./apps/default/cdk-cats/app
   prune: true
   sourceRef:
     kind: GitRepository
