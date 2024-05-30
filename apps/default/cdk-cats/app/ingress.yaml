@@ -6,7 +6,8 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-  - http:
+  - host: cdk-cats.example.com
+    http:
       paths:
       - path: /
         pathType: Prefix
